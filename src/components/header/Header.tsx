@@ -23,8 +23,15 @@ const Header = () => {
                             <FaBell className={`icon`}/>
                         </div>
 
-                        <div className={`avatar-cycle`}>
-                            <img className={`avatar`} src="/src/assets/images/gantar.jpg" alt="user-avatar"/>
+                        <div className={`user-box`}>
+                            <div className={`avatar-cycle`}>
+                                <img className={`avatar`} src="/src/assets/images/gantar.jpg" alt="user-avatar"/>
+                            </div>
+
+                            <div className={`user-text`}>
+                                <span className={`u-name`}>Exepta</span>
+                                <span className={`u-role`}>Administrator</span>
+                            </div>
                         </div>
                     </div>
                 </div>
