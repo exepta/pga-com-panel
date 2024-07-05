@@ -1,7 +1,9 @@
 import { FaBars } from "react-icons/fa6";
 import { FaBell } from "react-icons/fa6";
+import { IoMdSearch } from "react-icons/io";
 
 import "./Header.css"
+import SearchBar from "../search-bar/SearchBar.tsx";
 
 const Header = () => {
     return (
@@ -15,7 +17,7 @@ const Header = () => {
                     </div>
 
                     <div className={`middle`}>
-
+                        <SearchBar searchIcon={<IoMdSearch />} className={`header-search`} />
                     </div>
 
                     <div className={`right`}>
