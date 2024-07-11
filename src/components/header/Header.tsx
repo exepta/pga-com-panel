@@ -1,4 +1,4 @@
-import {Avatar, Box, Grid, TextField, useTheme} from "@mui/material";
+import {Avatar, Badge, Box, Grid, TextField, useTheme} from "@mui/material";
 import { NotificationsNone, Settings } from '@mui/icons-material';
 
 import placeholderAVATAR from "../../assets/images/gantar.jpg";
@@ -117,7 +117,22 @@ const Header = () => {
                             backgroundColor: theme.backgrounds.hovered
                         }
                     }}>
+
+                        <Badge
+                            badgeContent={2}
+                            max={99}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            sx={{
+                                '& .MuiBadge-badge': {
+                                    backgroundColor: theme.colors.accent,
+                                    color: theme.colors.primary,
+                                }
+                                }}>
                         <NotificationsNone sx={{color: theme.colors.primary, fontSize: '26px'}} />
+                        </Badge>
                     </Box>
                 </Grid>
             </Grid>
