@@ -1,43 +1,104 @@
-import { FaBars } from "react-icons/fa6";
-import { FaBell } from "react-icons/fa6";
-import { IoMdSearch } from "react-icons/io";
+import {Avatar, Box, Grid, TextField, useTheme} from "@mui/material";
+import { NotificationsNone, Settings } from '@mui/icons-material';
 
-import "./Header.css"
-import SearchBar from "../search-bar/SearchBar.tsx";
+import placeholderAVATAR from "../../assets/images/gantar.jpg";
 
 const Header = () => {
+    const theme = useTheme();
     return (
         <>
-            <header>
-                <div className={`header-container`}>
-                    <div className={`left`}>
-                        <div className={`side-bar-btn`}>
-                            <FaBars className={`icon`}/>
-                        </div>
-                    </div>
+            <Grid container sx={{
+                width: '100%',
+                height: '60px',
+                backgroundColor: theme.backgrounds.primary,
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'
+            }}>
+                {/* Left */}
+                <Grid item lg={3} md={2.5} xs={1}>
 
-                    <div className={`middle`}>
-                        <SearchBar searchIcon={<IoMdSearch />} className={`header-search`} />
-                    </div>
+                </Grid>
 
-                    <div className={`right`}>
-                        <div className={`tool-box`}>
-                            <FaBell className={`icon`}/>
-                        </div>
+                {/* Middle */}
+                <Grid item lg={6} md={7} xs={9} sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <Box sx={{width: '75%', height: '40px'}}>
+                    <TextField id="input-search-global"
+                               label="Search"
+                               autoComplete="off"
+                               variant="outlined"
+                               color="primary"
+                               fullWidth
+                               sx={{
+                                   '& .MuiInputLabel-root': {
+                                       color: theme.colors.primary,
+                                   },
+                                   '& .MuiOutlinedInput-root': {
+                                       backgroundColor: theme.backgrounds.primary,
+                                       color: theme.colors.primary,
+                                       '& > fieldset': {
+                                           borderColor: theme.colors.primary,
+                                       }
+                                   }
+                               }}
+                    />
+                    </Box>
+                </Grid>
 
-                        <div className={`user-box`}>
-                            <div className={`avatar-cycle`}>
-                                <img className={`avatar`} src="/src/assets/images/gantar.jpg" alt="user-avatar"/>
-                            </div>
+                {/* Right */}
+                <Grid item lg={3} md={2.5} xs={2} sx={{
+                    display: 'flex',
+                    justifyContent: 'right',
+                    alignItems: 'center',
+                    flexDirection: 'row-reverse',
+                    gap: '10px',
+                    padding: '0 16px'
+                }}>
+                    <Avatar src={placeholderAVATAR} alt="Exepta" sx={{
+                        backgroundColor: 'orange',
+                        cursor: 'pointer',
+                        width: '50px',
+                        height: '50px',
+                        border: '2px solid ' + theme.colors.primary
+                    }} />
 
-                            <div className={`user-text`}>
-                                <span className={`u-name`}>Exepta</span>
-                                <span className={`u-role`}>Administrator</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+                    {/* Settings */}
+                    <Box sx={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '50%',
+                        cursor: 'pointer',
+                        transition: '.3s all',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        '&:hover': {
+                            backgroundColor: theme.backgrounds.hovered
+                        }
+                    }}>
+                        <Settings sx={{color: theme.colors.primary, fontSize: '26px'}} />
+                    </Box>
+
+                    {/* Notification */}
+                    <Box sx={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '50%',
+                        cursor: 'pointer',
+                        transition: '.3s all',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        '&:hover': {
+                            backgroundColor: theme.backgrounds.hovered
+                        }
+                    }}>
+                        <NotificationsNone sx={{color: theme.colors.primary, fontSize: '26px'}} />
+                    </Box>
+                </Grid>
+            </Grid>
         </>
     )
 }

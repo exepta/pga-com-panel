@@ -1,26 +1,17 @@
 import {Route, Routes} from "react-router-dom";
-import React, {createContext, useState} from "react";
 import OutletPage from "./pages/OutletPage.tsx";
 import LoadingPage from "./pages/loading-page/LoadingPage.tsx";
 import DashboardPage from "./pages/dashboard-page/DashboardPage.tsx";
 import AuthenticationPage from "./pages/authentication-page/AuthenticationPage.tsx";
-
-const ThemeContext = createContext({
-  theme: '',
-  func: () => {}
-});
+import {ThemeProvider} from "@mui/material";
+import React from "react";
+import {theme} from "./services/ThemeService.ts";
 
 function App() {
 
-  const [theme, setTheme] = useState('dark');
-
-  const toggleTheme = () => {
-    setTheme((current) => current === "dark" ? "light" : "dark");
-  }
-
   return (
-    <ThemeContext.Provider value={{theme: theme, func: toggleTheme}}>
-      <div className={`app-router ${theme}`}>
+    <ThemeProvider theme={theme}>
+      <div className={`app-router`}>
         <Routes>
           <Route path="/" element={
             <React.Suspense fallback={<LoadingPage />}>
@@ -32,7 +23,7 @@ function App() {
           <Route path="auth" element={<AuthenticationPage />} />
         </Routes>
       </div>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   )
 }
 
