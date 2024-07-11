@@ -32,16 +32,38 @@ const Header = () => {
                                color="primary"
                                fullWidth
                                sx={{
-                                   '& .MuiInputLabel-root': {
-                                       color: theme.colors.primary,
-                                   },
                                    '& .MuiOutlinedInput-root': {
-                                       backgroundColor: theme.backgrounds.primary,
-                                       color: theme.colors.primary,
-                                       '& > fieldset': {
-                                           borderColor: theme.colors.primary,
-                                       }
-                                   }
+                                       height: '40px',
+                                       padding: '0 16px',
+                                       '& fieldset': {
+                                           borderColor: theme.colors.placeholder,
+                                           borderRadius: '20px',
+                                       },
+                                       '&:hover fieldset': {
+                                           borderColor: theme.colors.accent,
+                                       },
+                                       '&.Mui-focused fieldset': {
+                                           borderColor: theme.colors.accent,
+                                       },
+                                       '& .MuiInputBase-input': {
+                                           height: '100%',
+                                           color: theme.colors.primary,
+                                       },
+                                   },
+                                   '& .MuiInputLabel-root': {
+                                       transition: '.3s all',
+                                       padding: '0 20px',
+                                       top: '50%',
+                                       transform: 'translate(0, -50%)',
+                                       color: theme.colors.placeholder,
+                                   },
+                                   '& .MuiInputLabel-root.Mui-focused': {
+                                       color: theme.colors.accent,
+                                   },
+                                   '& .MuiInputLabel-shrink': {
+                                       top: '0',
+                                       transform: 'translate(0, -50%) scale(0.75)',
+                                   },
                                }}
                     />
                     </Box>
