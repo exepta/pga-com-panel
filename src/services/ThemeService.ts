@@ -35,12 +35,12 @@ declare module '@mui/material/styles' {
 export const theme = createTheme({
     backgrounds: {
         primary: '#3e414b',
-        hovered: '#434650',
+        hovered: '#464953',
     },
     colors: {
         primary: '#e4e4e4',
         accent: '#b75dbd',
-        placeholder: '#949494',
+        placeholder: '#808080',
     },
     divider: {
         color: '#878994',
