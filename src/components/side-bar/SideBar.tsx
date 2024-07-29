@@ -1,23 +1,146 @@
-import {Grid, useTheme} from "@mui/material";
+import {Avatar, Box, Typography, useTheme} from "@mui/material";
+import { Menu, Dashboard, Casino }from '@mui/icons-material/';
+import placeholderAvatar from '../../assets/images/gantar.jpg';
+import SideLink from "./link/SideLink.tsx";
+import {useState} from "react";
 
-type Props = {
-    state: boolean;
-}
-
-const SideBar = ({ state } :Props) => {
+const SideBar = () => {
     const theme = useTheme();
 
-    return(
-        state &&
-        <Grid container sx={{
-            width: "250px",
-            height: 'calc(100vh - 60px)',
-            backgroundColor: theme.backgrounds.primary,
-            boxShadow: '0 10px 10px rgba(0, 0, 0, 0.2)'
-        }}>
+    const[open, setOpen] = useState(true);
 
-        </Grid>
+    const toggleState = () => {
+        setOpen(!open);
+    }
+
+    return(
+        <Box sx={{
+            width: open ? '250px' : '65px',
+            transition: '.5s all',
+            height: '100vh',
+            backgroundColor: theme.backgrounds.secondary,
+        }}>
+            {/* Side close/open btn and Logo(Icon) + Title */}
+            <Box sx={{
+                width: '100%',
+                height: '50px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                paddingLeft: '20px',
+                paddingRight: '10px'
+            }}>
+                <Typography variant="h1"
+                            sx={{
+                                display: open ? 'block' : 'none',
+                                fontSize: '15px',
+                                fontWeight: 'bold',
+                                color: theme.colors.primary,
+                                cursor: 'default'
+                            }}>
+                    <span style={{color: theme.colors.accent}}>P</span>heanix
+                    <span style={{color: theme.colors.accent}}> G</span>aming
+                    <span style={{color: theme.colors.accent}}> A</span>rea
+                </Typography>
+                <Menu sx={{
+                    color: theme.colors.primary,
+                    cursor: 'pointer'
+                }} onClick={toggleState} />
+            </Box>
+
+            {/* User Section Side */}
+            <Box sx={{
+                width: '100%',
+                height: '80px',
+                padding: '0 10px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '10px',
+                backgroundColor: theme.backgrounds.overBox
+            }}>
+                <Avatar src={placeholderAvatar}
+                        sx={{
+                            width: open ? '60px' : '48px',
+                            height: open ? '60px' : '48px',
+                            cursor: 'pointer'
+                        }}/>
+                <Box sx={{
+                    width: '150px',
+                    height: '60px',
+                    transition: '.5s all',
+                    display: open ? 'flex' : 'none',
+                    justifyContent: 'center',
+                    alignItems: 'start',
+                    flexFlow: 'column',
+                }}>
+                    <Typography variant="subtitle1"
+                                sx={{
+                                    fontSize: '14px',
+                                    color: theme.colors.primary
+                                }}>
+                        Exepta
+                    </Typography>
+
+                    <Typography variant="subtitle2"
+                                sx={{
+                                    fontSize: '11px',
+                                    color: theme.colors.accent
+                                }}>
+                        Administrator
+                    </Typography>
+                </Box>
+            </Box>
+
+            {/* Navigation Section Side */}
+            <Box sx={{
+                width: '100%',
+                height: 'calc(100vh - 180px)',
+                overflowX: 'hidden',
+                overflowY: 'auto',
+                padding: '10px',
+                display: 'flex',
+                flexFlow: 'column',
+                gap: '5px'
+            }}>
+                {/* Dashboard Link */}
+                <SideLink title="Dashboard"
+                          icon={
+                              <Dashboard sx={{
+                                  color: theme.colors.primary,
+                                  fontSize: '18px'
+                              }}/>
+                          } showTitle={open} />
+
+                {/* League of Legends Link */}
+                <SideLink title="League of Legends"
+                          icon={
+                              <Casino sx={{
+                                  color: theme.colors.primary,
+                                  fontSize: '18px'
+                              }}/>
+                          } showTitle={open}/>
+
+            </Box>
+
+            {/* Info Section Side */}
+            <Box sx={{
+                width: '100%',
+                height: '50px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderTop: '1px solid ' + theme.backgrounds.secondaryHovered
+            }}>
+                <Typography variant="h4" sx={{
+                    fontSize: '11px',
+                    color: theme.colors.primary
+                }} >
+                    {open ? 'Version -' : ''} 1.0.0
+                </Typography>
+            </Box>
+        </Box>
     )
 }
 
-export default SideBar;
+export default SideBar
