@@ -6,26 +6,30 @@ type Props = {
     link: string,
     title: string,
     icon: React.ReactNode,
+    currentView: boolean,
 }
 
-const SideLink = ({ link, icon, title } :Props) => {
+const SideLink = ({ link, icon, title, currentView } :Props) => {
     const theme = useTheme();
     return(
         <NavLink to={link}>
         <Box sx={{
-            width: '100%',
+            width: currentView ? '100%' : '35px',
             height: '35px',
             padding: '0 5px',
+            paddingLeft: currentView ? '5px' : '7px',
             borderTopRightRadius: '5px',
             borderBottomRightRadius: '5px',
+            borderTopLeftRadius: currentView ? '0' : '5px',
+            borderBottomLeftRadius: currentView ? '0' : '5px',
             borderLeft: '2px solid transparent',
             display: 'flex',
             flexFlow: 'row',
             cursor: 'pointer',
             transition: '.3s all',
             ':hover': {
-                borderLeft: '2px solid ' + theme.colors.accent,
-                backgroundColor: theme.backgrounds.secondaryHovered
+                borderLeft: currentView ? '2px solid ' + theme.colors.accent : '2px solid transparent',
+                backgroundColor: currentView ? theme.backgrounds.secondaryHovered : theme.colors.accent
             }
         }}>
             <Box sx={{

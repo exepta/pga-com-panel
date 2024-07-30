@@ -115,7 +115,9 @@ const SideBar = ( { externalOpenState } :Props ) => {
                 height: 'calc(100vh - 180px)',
                 overflowX: 'hidden',
                 overflowY: 'auto',
+                transition: '.5s all',
                 padding: '10px',
+                paddingLeft: open ? '10px' : '13px',
                 display: 'flex',
                 flexFlow: 'column',
                 gap: '5px'
@@ -128,7 +130,7 @@ const SideBar = ( { externalOpenState } :Props ) => {
                                   color: theme.colors.primary,
                                   fontSize: '18px',
                               }}/>
-                          } showTitle={open} />
+                          } currentView={open} />
 
                 {/* League of Legends Link */}
                 <SideLink link="league-of-legends"
@@ -138,7 +140,7 @@ const SideBar = ( { externalOpenState } :Props ) => {
                                   color: theme.colors.primary,
                                   fontSize: '18px'
                               }}/>
-                          } showTitle={open}/>
+                          } currentView={open}/>
 
             </Box>
 
