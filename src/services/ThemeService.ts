@@ -15,6 +15,7 @@ declare module '@mui/material/styles' {
             primary: string;
             accent: string;
             placeholder: string;
+            decent: string;
         }
         divider: {
             color: string
@@ -34,6 +35,7 @@ declare module '@mui/material/styles' {
             primary?: string;
             accent?: string;
             placeholder?: string
+            decent?: string;
         }
         divider?: {
             color?: string
@@ -54,6 +56,7 @@ export const theme = createTheme({
         primary: '#e4e4e4',
         accent: '#7066c4',
         placeholder: '#808080',
+        decent: '#6c6c6c',
     },
     divider: {
         color: '#878994',
