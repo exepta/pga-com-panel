@@ -1,15 +1,18 @@
 import {Box, Typography, useTheme} from "@mui/material";
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 type Props = {
+    link: string,
     title: string,
     icon: React.ReactNode,
     showTitle: boolean,
 }
 
-const SideLink = ({ icon, title, showTitle } :Props) => {
+const SideLink = ({ link, icon, title, showTitle } :Props) => {
     const theme = useTheme();
     return(
+        <NavLink to={link}>
         <Box sx={{
             width: '100%',
             height: '35px',
@@ -54,6 +57,7 @@ const SideLink = ({ icon, title, showTitle } :Props) => {
                 </Typography>
             </Box>
         </Box>
+        </NavLink>
     )
 }
 

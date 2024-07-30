@@ -6,6 +6,7 @@ import AuthenticationPage from "./pages/authentication-page/AuthenticationPage.t
 import {ThemeProvider} from "@mui/material";
 import React from "react";
 import {theme} from "./services/ThemeService.ts";
+import LeagueMainPage from "./pages/league-page/LeagueMainPage.tsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             </React.Suspense>
           }>
             <Route path="/" element={<DashboardPage />} />
+            <Route path="/league-of-legends" element={<LeagueMainPage />} />
           </Route>
           <Route path="auth" element={<AuthenticationPage />} />
         </Routes>

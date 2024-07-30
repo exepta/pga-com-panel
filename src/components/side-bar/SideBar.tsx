@@ -4,13 +4,18 @@ import placeholderAvatar from '../../assets/images/gantar.jpg';
 import SideLink from "./link/SideLink.tsx";
 import {useState} from "react";
 
-const SideBar = () => {
+type Props = {
+    externalOpenState: (open: boolean) => void,
+}
+
+const SideBar = ( { externalOpenState } :Props ) => {
     const theme = useTheme();
 
     const[open, setOpen] = useState(true);
 
     const toggleState = () => {
         setOpen(!open);
+        externalOpenState(!open);
     }
 
     return(
@@ -19,6 +24,7 @@ const SideBar = () => {
             transition: '.5s all',
             height: '100vh',
             backgroundColor: theme.backgrounds.secondary,
+            position: 'absolute',
         }}>
             {/* Side close/open btn and Logo(Icon) + Title */}
             <Box sx={{
@@ -104,7 +110,8 @@ const SideBar = () => {
                 gap: '5px'
             }}>
                 {/* Dashboard Link */}
-                <SideLink title="Dashboard"
+                <SideLink link="/"
+                          title="Dashboard"
                           icon={
                               <Dashboard sx={{
                                   color: theme.colors.primary,
@@ -113,7 +120,8 @@ const SideBar = () => {
                           } showTitle={open} />
 
                 {/* League of Legends Link */}
-                <SideLink title="League of Legends"
+                <SideLink link="league-of-legends"
+                          title="League of Legends"
                           icon={
                               <Casino sx={{
                                   color: theme.colors.primary,
@@ -130,6 +138,7 @@ const SideBar = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                backgroundColor: theme.backgrounds.overBox,
                 borderTop: '1px solid ' + theme.backgrounds.secondaryHovered
             }}>
                 <Typography variant="h4" sx={{
