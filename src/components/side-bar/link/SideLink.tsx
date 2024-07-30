@@ -6,10 +6,9 @@ type Props = {
     link: string,
     title: string,
     icon: React.ReactNode,
-    showTitle: boolean,
 }
 
-const SideLink = ({ link, icon, title, showTitle } :Props) => {
+const SideLink = ({ link, icon, title } :Props) => {
     const theme = useTheme();
     return(
         <NavLink to={link}>
@@ -52,8 +51,10 @@ const SideLink = ({ link, icon, title, showTitle } :Props) => {
                             sx={{
                                 fontSize: '13px',
                                 color: theme.colors.primary,
+                                textWrap: 'nowrap',
+                                overflow: 'hidden'
                             }}>
-                    {showTitle ? title : ''}
+                    {title}
                 </Typography>
             </Box>
         </Box>

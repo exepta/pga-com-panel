@@ -34,23 +34,30 @@ const SideBar = ( { externalOpenState } :Props ) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 paddingLeft: '20px',
-                paddingRight: '10px'
+                paddingRight: '10px',
             }}>
                 <Typography variant="h1"
                             sx={{
-                                display: open ? 'block' : 'none',
+/*                                display: open ? 'block' : 'none',*/
+                                transform: open ? 'translateX(0)' : 'translateX(-500px)',
+                                textWrap: 'nowrap',
                                 fontSize: '15px',
                                 fontWeight: 'bold',
+                                transition: '1s all',
                                 color: theme.colors.primary,
-                                cursor: 'default'
+                                cursor: 'default',
+                                overflow: 'hidden'
                             }}>
                     <span style={{color: theme.colors.accent}}>P</span>heanix
                     <span style={{color: theme.colors.accent}}> G</span>aming
                     <span style={{color: theme.colors.accent}}> A</span>rea
                 </Typography>
+
                 <Menu sx={{
                     color: theme.colors.primary,
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transform: open ? 'translateX(0)' : 'translateX(-13px)',
+                    transition: '.5s all',
                 }} onClick={toggleState} />
             </Box>
 
@@ -69,21 +76,24 @@ const SideBar = ( { externalOpenState } :Props ) => {
                         sx={{
                             width: open ? '60px' : '48px',
                             height: open ? '60px' : '48px',
-                            cursor: 'pointer'
+                            cursor: 'pointer',
+                            transition: '.5s all'
                         }}/>
                 <Box sx={{
                     width: '150px',
                     height: '60px',
                     transition: '.5s all',
-                    display: open ? 'flex' : 'none',
+                    display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'start',
                     flexFlow: 'column',
+                    overflow: 'hidden'
                 }}>
                     <Typography variant="subtitle1"
                                 sx={{
                                     fontSize: '14px',
-                                    color: theme.colors.primary
+                                    color: theme.colors.primary,
+                                    textWrap: 'nowrap',
                                 }}>
                         Exepta
                     </Typography>
@@ -91,7 +101,8 @@ const SideBar = ( { externalOpenState } :Props ) => {
                     <Typography variant="subtitle2"
                                 sx={{
                                     fontSize: '11px',
-                                    color: theme.colors.accent
+                                    color: theme.colors.accent,
+                                    textWrap: 'nowrap',
                                 }}>
                         Administrator
                     </Typography>
@@ -115,7 +126,7 @@ const SideBar = ( { externalOpenState } :Props ) => {
                           icon={
                               <Dashboard sx={{
                                   color: theme.colors.primary,
-                                  fontSize: '18px'
+                                  fontSize: '18px',
                               }}/>
                           } showTitle={open} />
 
