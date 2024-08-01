@@ -1,6 +1,6 @@
 import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
-import {Google, Instagram, Send, X} from "@mui/icons-material";
+import {GitHub, Google, Send} from "@mui/icons-material";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
@@ -16,6 +16,7 @@ const AuthenticationPage = () => {
         }}>
 
             <Box sx={{
+                position: 'relative',
                 width: '60%',
                 minWidth: '350px',
                 height: '75%',
@@ -26,17 +27,42 @@ const AuthenticationPage = () => {
                 display: 'flex',
                 overflow: 'hidden'
             }}>
+                {/* Left Side */}
+                <Box sx={{
+                    zIndex: '10',
+                    position: 'absolute',
+                    width: '50%',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexFlow: 'column',
+                    gap: '10px',
+                }}>
+
+                    <Typography variant="h1"
+                                sx={{
+                                    color: theme.colors.primary,
+                                    fontSize: '28px'
+                                }}>
+                        Sign Up
+                    </Typography>
+
+                </Box>
+
+
                 <Box sx={{
                     width: '50%',
                     height: '100%',
                     backgroundImage: 'url(' + backgroundImage + ')',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    opacity: '0.5',
+                    opacity: '0.4',
                 }}>
 
                 </Box>
 
+                {/* Right Side */}
                 <Box sx={{
                     width: '50%',
                     height: '100%',
@@ -56,11 +82,55 @@ const AuthenticationPage = () => {
                         Sign In
                     </Typography>
 
-                    <TextField id="email-input-login" label="Email Address" fullWidth variant="standard">
+                    <TextField id="email-input-login" label="Email Address" fullWidth variant="standard"
+                               sx={{
+                                   '& .MuiInput-root': {
+                                       color: theme.colors.primary,
+                                       fontSize: '14px'
+                                   },
+                                   '& .MuiInputLabel-root': {
+                                       color: theme.colors.placeholder,
+                                       fontSize: '12px'
+                                   },
+                                   '& .MuiInputLabel-root.Mui-focused': {
+                                       color: theme.colors.accent,
+                                   },
+                                   '& .MuiInput-underline:before': {
+                                       borderBottomColor: theme.colors.placeholder,
+                                   },
+                                   '& .MuiInput-underline:hover:before': {
+                                       borderBottomColor: theme.colors.accent,
+                                   },
+                                   '& .MuiInput-underline:after': {
+                                       borderBottomColor: theme.colors.accent,
+                                   },
+                               }}>
 
                     </TextField>
 
-                    <TextField type="password" id="password-input-login" label="Password" fullWidth variant="standard">
+                    <TextField type="password" id="password-input-login" label="Password" fullWidth variant="standard"
+                               sx={{
+                                   '& .MuiInput-root': {
+                                       color: theme.colors.primary,
+                                       fontSize: '14px'
+                                   },
+                                   '& .MuiInputLabel-root': {
+                                       color: theme.colors.placeholder,
+                                       fontSize: '12px'
+                                   },
+                                   '& .MuiInputLabel-root.Mui-focused': {
+                                       color: theme.colors.accent,
+                                   },
+                                   '& .MuiInput-underline:before': {
+                                       borderBottomColor: theme.colors.placeholder,
+                                   },
+                                   '& .MuiInput-underline:hover:before': {
+                                       borderBottomColor: theme.colors.accent,
+                                   },
+                                   '& .MuiInput-underline:after': {
+                                       borderBottomColor: theme.colors.accent,
+                                   },
+                               }}>
 
                     </TextField>
 
@@ -93,33 +163,6 @@ const AuthenticationPage = () => {
                         </Typography>
                     </Box>
 
-                    <Button fullWidth variant="contained" startIcon={<X />}
-                            sx={{
-                                justifyContent: 'center',
-                                gap: '25px',
-                                paddingLeft: '20px',
-                                paddingRight: '20px',
-                                backgroundColor: theme.colors.accent,
-                                ':hover': {
-                                    backgroundColor: theme.colors.accentHovered,
-                                }
-                    }}>
-                        formerly Twitter
-                    </Button>
-
-                    <Button fullWidth variant="contained" startIcon={<Instagram />}
-                            sx={{
-                                justifyContent: 'center',
-                                gap: '25px',
-                                paddingLeft: '20px',
-                                paddingRight: '20px',
-                                backgroundColor: theme.colors.accent,
-                                ':hover': {
-                                        backgroundColor: theme.colors.accentHovered,
-                                }
-                    }}>
-                        Instagram
-                    </Button>
 
                     <Button fullWidth variant="contained" startIcon={<Google />}
                             sx={{
@@ -127,12 +170,26 @@ const AuthenticationPage = () => {
                                 gap: '25px',
                                 paddingLeft: '20px',
                                 paddingRight: '20px',
-                                backgroundColor: theme.colors.accent,
+                                backgroundColor: theme.social.google,
                                 ':hover': {
-                                    backgroundColor: theme.colors.accentHovered,
+                                    backgroundColor: theme.social.googleHovered,
                                 }
                             }}>
                         Google
+                    </Button>
+
+                    <Button fullWidth variant="contained" startIcon={<GitHub />}
+                            sx={{
+                                justifyContent: 'center',
+                                gap: '25px',
+                                paddingLeft: '20px',
+                                paddingRight: '20px',
+                                backgroundColor: theme.social.github,
+                                ':hover': {
+                                    backgroundColor: theme.social.githubHovered,
+                                }
+                    }}>
+                        GitHub
                     </Button>
 
                 </Box>
