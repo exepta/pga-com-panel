@@ -1,6 +1,6 @@
 import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
-import {GitHub, Google, HeadsetMic, Send} from "@mui/icons-material";
+import {GitHub, Google, Send} from "@mui/icons-material";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
@@ -57,7 +57,8 @@ const AuthenticationPage = () => {
                         <Typography variant="subtitle1"
                                     sx={{
                                         color: theme.colors.primary,
-                                        fontSize: '18px'
+                                        fontSize: '16px',
+                                        textAlign: 'center'
                                     }}>
                             You're new? Come join us and support our community! Are you good at coaching?
                             Then indicate it when you register and we'll see what happens!
@@ -66,53 +67,30 @@ const AuthenticationPage = () => {
 
                     <Box sx={{
                         width: '65%',
-                        height: '225px',
+                        height: '220px',
                         display: 'flex',
-                        justifyContent: 'space-between',
+                        justifyContent: 'center',
                         alignItems: 'center',
                         padding: '0 10px'
                     }}>
 
-                        {/* Box 1 */}
-                        <Box sx={{
-                            width: '210px',
-                            height: '210px',
-                            borderRadius: '10px',
-                            backgroundColor: theme.backgrounds.secondaryTransparency,
-                            transition: '.4s all',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            ':hover': {
-                                backgroundColor: theme.backgrounds.secondary,
-                                transform: 'scale(1.1)',
-                            }
-                        }}>
-                            <HeadsetMic sx={{
-                                color: theme.colors.primary,
-                                fontSize: '40px',
-                            }} />
-                        </Box>
-
-                        {/* Box 2 */}
-                        <Box sx={{
-                            width: '210px',
-                            height: '210px',
-                            borderRadius: '10px',
-                            backgroundColor: theme.backgrounds.secondaryTransparency,
-                            transition: '.4s all',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            ':hover': {
-                                backgroundColor: theme.backgrounds.secondary,
-                                transform: 'scale(1.1)',
-                            }
-                        }}>
-
-                        </Box>
+                        <Button variant="outlined"
+                                sx={{
+                                    justifyContent: 'center',
+                                    width: '300px',
+                                    gap: '25px',
+                                    paddingLeft: '20px',
+                                    paddingRight: '20px',
+                                    border: '2px solid ' + theme.colors.accent,
+                                    backgroundColor: theme.colors.accentTransparency,
+                                    color: theme.colors.primary,
+                                    ':hover': {
+                                        border: '2px solid ' + theme.colors.accentHovered,
+                                        backgroundColor: theme.colors.accentHovered
+                                    }
+                                }}>
+                            Register
+                        </Button>
 
                     </Box>
 

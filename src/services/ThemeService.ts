@@ -17,6 +17,7 @@ declare module '@mui/material/styles' {
             primary: string;
             accent: string;
             accentHovered: string;
+            accentTransparency: string;
             placeholder: string;
             decent: string;
         }
@@ -46,6 +47,7 @@ declare module '@mui/material/styles' {
             primary?: string;
             accent?: string;
             accentHovered?: string;
+            accentTransparency?: string;
             placeholder?: string;
             decent?: string;
         }
@@ -82,6 +84,7 @@ export const theme = createTheme({
         primary: '#e4e4e4',
         accent: '#7066c4',
         accentHovered: '#5f57a9',
+        accentTransparency: 'rgba(95,87,169,0.2)',
         placeholder: '#808080',
         decent: '#6c6c6c',
     },
