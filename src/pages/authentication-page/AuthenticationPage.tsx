@@ -1,6 +1,6 @@
 import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
-import {GitHub, Google, Send} from "@mui/icons-material";
+import {GitHub, Google, HeadsetMic, Send} from "@mui/icons-material";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
@@ -47,6 +47,74 @@ const AuthenticationPage = () => {
                                 }}>
                         Sign Up
                     </Typography>
+
+                    <Box sx={{
+                        width: '65%',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}>
+                        <Typography variant="subtitle1"
+                                    sx={{
+                                        color: theme.colors.primary,
+                                        fontSize: '18px'
+                                    }}>
+                            You're new? Come join us and support our community! Are you good at coaching?
+                            Then indicate it when you register and we'll see what happens!
+                        </Typography>
+                    </Box>
+
+                    <Box sx={{
+                        width: '65%',
+                        height: '225px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '0 10px'
+                    }}>
+
+                        {/* Box 1 */}
+                        <Box sx={{
+                            width: '210px',
+                            height: '210px',
+                            borderRadius: '10px',
+                            backgroundColor: theme.backgrounds.secondaryTransparency,
+                            transition: '.4s all',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            ':hover': {
+                                backgroundColor: theme.backgrounds.secondary,
+                                transform: 'scale(1.1)',
+                            }
+                        }}>
+                            <HeadsetMic sx={{
+                                color: theme.colors.primary,
+                                fontSize: '40px',
+                            }} />
+                        </Box>
+
+                        {/* Box 2 */}
+                        <Box sx={{
+                            width: '210px',
+                            height: '210px',
+                            borderRadius: '10px',
+                            backgroundColor: theme.backgrounds.secondaryTransparency,
+                            transition: '.4s all',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            ':hover': {
+                                backgroundColor: theme.backgrounds.secondary,
+                                transform: 'scale(1.1)',
+                            }
+                        }}>
+
+                        </Box>
+
+                    </Box>
 
                 </Box>
 
@@ -98,6 +166,9 @@ const AuthenticationPage = () => {
                                    '& .MuiInput-underline:before': {
                                        borderBottomColor: theme.colors.placeholder,
                                    },
+                                   '& .MuiInput-underline:hover': {
+                                       borderBottomColor: theme.colors.placeholder,
+                                   },
                                    '& .MuiInput-underline:hover:before': {
                                        borderBottomColor: theme.colors.accent,
                                    },
@@ -124,6 +195,9 @@ const AuthenticationPage = () => {
                                    '& .MuiInput-underline:before': {
                                        borderBottomColor: theme.colors.placeholder,
                                    },
+                                   '& .MuiInput-underline:hover': {
+                                       borderBottomColor: theme.colors.placeholder,
+                                   },
                                    '& .MuiInput-underline:hover:before': {
                                        borderBottomColor: theme.colors.accent,
                                    },
@@ -134,18 +208,24 @@ const AuthenticationPage = () => {
 
                     </TextField>
 
-                    <Button fullWidth  variant="contained" endIcon={<Send />}
-                            sx={{
-                                justifyContent: 'space-between',
-                                paddingLeft: '20px',
-                                paddingRight: '20px',
-                                backgroundColor: theme.colors.accent,
-                                ':hover': {
-                                    backgroundColor: theme.colors.accentHovered,
-                                }
-                            }}>
-                        Send
-                    </Button>
+                    <Box sx={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'right',
+                    }}>
+                        <Button variant="contained" endIcon={<Send />}
+                                sx={{
+                                    width: '150px',
+                                    paddingLeft: '20px',
+                                    paddingRight: '20px',
+                                    backgroundColor: theme.colors.accent,
+                                    ':hover': {
+                                        backgroundColor: theme.colors.accentHovered,
+                                    }
+                                }}>
+                            Send
+                        </Button>
+                    </Box>
 
                     <Box sx={{
                         width: '100%',

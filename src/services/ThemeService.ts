@@ -6,6 +6,7 @@ declare module '@mui/material/styles' {
         backgrounds: {
             primary: string;
             secondary: string;
+            secondaryTransparency: string;
             secondaryHovered: string;
             overBox: string;
             hovered: string;
@@ -34,6 +35,7 @@ declare module '@mui/material/styles' {
         backgrounds?: {
             primary?: string;
             secondary?: string;
+            secondaryTransparency?: string;
             secondaryHovered?: string;
             overBox?: string;
             hovered?: string;
@@ -63,6 +65,7 @@ export const theme = createTheme({
     backgrounds: {
         primary: '#3e414b',
         secondary: '#26282d',
+        secondaryTransparency: 'rgba(38,40,45,0.5)',
         secondaryHovered: '#2b2d33',
         overBox: '#1c1e21',
         hovered: '#464953',
