@@ -1,2 +1,2 @@
-export const BASE_URL: string = "http://localhost:8080/";
-export const AUTH_REST_POINT: string = BASE_URL + "v0/auth/";
+export const BASE_URL: string = "http://localhost:8090/";
+export const AUTH_REST_POINT: string = BASE_URL + "api/v0/auth";

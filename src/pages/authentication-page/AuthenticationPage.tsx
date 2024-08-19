@@ -1,9 +1,26 @@
 import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
 import {GitHub, Google, Send} from "@mui/icons-material";
+import {useState} from "react";
+import {login} from "../../services/AuthService.ts";
+import {useNavigate} from "react-router-dom";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
+    
+    const [username, setUsername] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+
+    const handleLogin = async () => {
+        const state = await login(username, password);
+        console.log(">>>>> " + state);
+        if(state) {
+            navigate('/');
+        }
+    }
+
     return (
         <Box sx={{
             width: '100vw',
@@ -153,7 +170,9 @@ const AuthenticationPage = () => {
                                    '& .MuiInput-underline:after': {
                                        borderBottomColor: theme.colors.accent,
                                    },
-                               }}>
+                               }}
+                               onChange={event => {setUsername(event.target.value); setEmail(event.target.value)}}
+                    >
 
                     </TextField>
 
@@ -182,7 +201,9 @@ const AuthenticationPage = () => {
                                    '& .MuiInput-underline:after': {
                                        borderBottomColor: theme.colors.accent,
                                    },
-                               }}>
+                               }}
+                               onChange={event => {setPassword(event.target.value)}}
+                    >
 
                     </TextField>
 
@@ -200,7 +221,9 @@ const AuthenticationPage = () => {
                                     ':hover': {
                                         backgroundColor: theme.colors.accentHovered,
                                     }
-                                }}>
+                                }}
+                                onClick={() => handleLogin()}
+                        >
                             Send
                         </Button>
                     </Box>
