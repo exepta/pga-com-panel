@@ -1,15 +1,28 @@
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import SideBar from "../components/side-bar/SideBar.tsx";
 import Header from "../components/header/Header.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {sessionCheck} from "../services/AuthService.ts";
 
 const OutletPage = () => {
-
+    const navigate = useNavigate();
     const[isOpen, setIsOpen] = useState(true);
 
     const selectedOpen = (state: boolean) => {
         setIsOpen(state);
     }
+    
+    useEffect(() => {
+        async function check() {
+            const isValid = await sessionCheck();
+            if(!isValid) {
+                navigate('/auth');
+                await check();
+            }
+        }
+
+        check().then(() => {navigate('/')}).catch(error => {console.log(error)});
+    }, [navigate]);
 
     return (
         <>

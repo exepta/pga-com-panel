@@ -9,13 +9,11 @@ const AuthenticationPage = () => {
     const theme = useTheme();
     const navigate = useNavigate();
     
-    const [username, setUsername] = useState<string>("");
+    const [user_data, setUserData] = useState<string>("");
     const [password, setPassword] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
 
     const handleLogin = async () => {
-        const state = await login(username, password);
-        console.log(">>>>> " + state);
+        const state = await login(user_data, password);
         if(state) {
             navigate('/');
         }
@@ -171,7 +169,7 @@ const AuthenticationPage = () => {
                                        borderBottomColor: theme.colors.accent,
                                    },
                                }}
-                               onChange={event => {setUsername(event.target.value); setEmail(event.target.value)}}
+                               onChange={event => {setUserData(event.target.value)}}
                     >
 
                     </TextField>

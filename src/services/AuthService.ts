@@ -26,3 +26,48 @@ export const login = async (data: string, password: string) => {
 
     return state;
 }
+
+export const register = async (data: string, email: string, password: string) => {
+    let state: boolean = false;
+    await axios.post(`${AUTH_REST_POINT}/register`, {
+        username: data,
+        email: email,
+        password: password,
+    }, {
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Accept": "application/json",
+        }
+    }).then(async (response) => {
+        if (response.status === 200) {
+            state = true;
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    return state;
+}
+
+export const sessionCheck = async () => {
+    let state: boolean = false;
+    const accessToken = localStorage.getItem("token");
+    
+    await axios.get(`${AUTH_REST_POINT}/session_check`, {
+        headers: {
+            "Authorization": `${accessToken}`,
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Accept": "application/json",
+        }
+    }).then(async (response) => {
+        if (response.status === 200) {
+            state = true;
+        }
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    return state;
+}
