@@ -5,9 +5,10 @@ type Props = {
     icon: React.ReactNode,
     badgeAble?: boolean,
     badgeCount?: number,
+    onClick?: React.MouseEventHandler<HTMLDivElement>,
 }
 
-const ToolIcon = ({ icon, badgeAble, badgeCount } :Props) => {
+const ToolIcon = ({ icon, badgeAble, badgeCount, onClick } :Props) => {
     const theme = useTheme();
     if(badgeCount !== undefined && badgeCount < 0) {
         badgeCount = 0;
@@ -26,7 +27,7 @@ const ToolIcon = ({ icon, badgeAble, badgeCount } :Props) => {
             ':hover': {
                 backgroundColor: theme.backgrounds.hovered
             }
-        }}>
+        }} onClick={onClick}>
             {badgeAble
                 ? <Badge badgeContent={badgeCount}
                          max={99}

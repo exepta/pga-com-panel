@@ -2,6 +2,7 @@ import {Box, useTheme} from "@mui/material";
 import ToolIcon from "./tool-icon/ToolIcon.tsx";
 import {Logout, NotificationsNone, Settings} from "@mui/icons-material";
 import NavigationHeader from "./navigation/NavigationHeader.tsx";
+import useAuth from "../../hooks/useAuth.ts";
 
 type Props = {
     extended: boolean,
@@ -9,6 +10,7 @@ type Props = {
 
 const Header = ( { extended } :Props ) => {
     const theme = useTheme();
+    const { logout } = useAuth();
     const width :string = extended ? '250' : '65';
     return(
         <Box sx={{
@@ -85,7 +87,7 @@ const Header = ( { extended } :Props ) => {
                             color: theme.colors.primary,
                             fontSize: '20px',
                         }}/>
-                    }/>
+                    } onClick={() => logout()}/>{/* ToDo: Create a dialog for handle logout question. */}
 
                 </Box>
 

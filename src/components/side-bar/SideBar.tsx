@@ -3,6 +3,7 @@ import { Menu, Dashboard, Casino }from '@mui/icons-material/';
 import placeholderAvatar from '../../assets/images/gantar.jpg';
 import SideLink from "./link/SideLink.tsx";
 import {useState} from "react";
+import useAuth from "../../hooks/useAuth.ts";
 
 type Props = {
     externalOpenState: (open: boolean) => void,
@@ -10,6 +11,7 @@ type Props = {
 
 const SideBar = ( { externalOpenState } :Props ) => {
     const theme = useTheme();
+    const { user } = useAuth();
 
     const[open, setOpen] = useState(true);
 
@@ -95,7 +97,7 @@ const SideBar = ( { externalOpenState } :Props ) => {
                                     color: theme.colors.primary,
                                     textWrap: 'nowrap',
                                 }}>
-                        Exepta
+                        {user === null ? 'Placeholder' : user.username.charAt(0).toUpperCase() +  user.username.slice(1).toLowerCase()}
                     </Typography>
 
                     <Typography variant="subtitle2"
