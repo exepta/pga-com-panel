@@ -1,6 +1,7 @@
 const LoadingPage = () => {
     return (
         <>
+            Loading...
         </>
     )
 }

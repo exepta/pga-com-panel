@@ -1,6 +1,7 @@
 const DashboardPage = () => {
     return (
         <>
+            Dashboard
         </>
     )
 }

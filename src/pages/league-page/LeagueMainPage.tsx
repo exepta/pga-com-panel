@@ -1,6 +1,7 @@
 const LeagueMainPage = () => {
     return(
         <>
+            League of Legends
         </>
     )
 }

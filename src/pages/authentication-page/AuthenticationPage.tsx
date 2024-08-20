@@ -2,22 +2,25 @@ import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
 import {GitHub, Google, Send} from "@mui/icons-material";
 import {useState} from "react";
-import {login} from "../../services/AuthService.ts";
-import {useNavigate} from "react-router-dom";
+import useAuth from "../../hooks/useAuth.ts";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
-    const navigate = useNavigate();
+
+    const { login } = useAuth();
     
     const [user_data, setUserData] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
     const handleLogin = async () => {
-        const state = await login(user_data, password);
-        if(state) {
-            navigate('/');
+        try {
+            await login(user_data, password);
+            setUserData("");
+            setPassword("");
+        } catch (error) {
+            console.error('Failed to login:', error);
         }
-    }
+    };
 
     return (
         <Box sx={{
