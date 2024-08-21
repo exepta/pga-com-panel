@@ -3,6 +3,7 @@ import backgroundImage from "../../assets/images/auth-background.jpeg";
 import {GitHub, Google, Send} from "@mui/icons-material";
 import {useState} from "react";
 import useAuth from "../../hooks/useAuth.ts";
+import RegisterInnerPage from "./RegisterInnerPage.tsx";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
@@ -11,6 +12,7 @@ const AuthenticationPage = () => {
     
     const [user_data, setUserData] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const [triggerRegister, setTriggerRegister] = useState<boolean>(false);
 
     const handleLogin = async () => {
         try {
@@ -24,17 +26,19 @@ const AuthenticationPage = () => {
 
     return (
         <Box sx={{
+            position: 'relative',
             width: '100vw',
             height: '100vh',
             background: 'linear-gradient(to bottom right, ' + theme.backgrounds.gradientAccent + ')',
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             overflow: 'hidden'
         }}>
 
             <Box sx={{
-                position: 'relative',
+                position: 'absolute',
                 width: '60%',
                 minWidth: '350px',
                 height: '75%',
@@ -43,9 +47,13 @@ const AuthenticationPage = () => {
                 borderRadius: '10px',
                 boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
                 display: 'flex',
+                transition: '.8s all',
+                zIndex: triggerRegister ? '0' : '10',
+                opacity: triggerRegister ? '0' : '1',
+                transform: triggerRegister ? 'translateY(-300px)' : 'translateY(0)',
                 overflow: 'hidden'
             }}>
-                {/* Left Side */}
+                {/* Left Side (Register) */}
                 <Box sx={{
                     zIndex: '10',
                     position: 'absolute',
@@ -106,7 +114,7 @@ const AuthenticationPage = () => {
                                         border: '2px solid ' + theme.colors.accentHovered,
                                         backgroundColor: theme.colors.accentHovered
                                     }
-                                }}>
+                                }} onClick={() => setTriggerRegister(true)}>
                             Register
                         </Button>
 
@@ -126,7 +134,7 @@ const AuthenticationPage = () => {
 
                 </Box>
 
-                {/* Right Side */}
+                {/* Right Side (LOGIN) */}
                 <Box sx={{
                     width: '50%',
                     height: '100%',
@@ -276,6 +284,10 @@ const AuthenticationPage = () => {
 
                 </Box>
             </Box>
+
+            <RegisterInnerPage triggered={triggerRegister}
+                               setTriggered={setTriggerRegister}
+            />
 
         </Box>
     )
