@@ -13,6 +13,7 @@ declare module '@mui/material/styles' {
             hovered: string;
             primaryHovered: string;
             gradientAccent: string;
+            overlayAuth: string;
         }
         colors: {
             primary: string;
@@ -50,6 +51,7 @@ declare module '@mui/material/styles' {
             hovered?: string;
             primaryHovered?: string;
             gradientAccent?: string;
+            overlayAuth?: string;
         }
         colors?: {
             primary?: string;
@@ -88,10 +90,11 @@ export const theme = createTheme({
         hovered: '#464953',
         primaryHovered: 'rgba(70,73,83,0.5)',
         gradientAccent: '#7066c4, #b75b9f, #BE3369FF',
+        overlayAuth: 'rgba(167,75,192, 0.3)',
     },
     social: {
-        google: '#d73e56',
-        googleHovered: '#ad2c41',
+        google: '#BB417B',
+        googleHovered: '#af3b72',
         github: '#393946',
         githubHovered: '#2f2f3a',
     },

@@ -27,7 +27,7 @@ const PrivacyEntryPage = ({index}: Props) => {
                 minWidth: '175px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '15px'
+                gap: '10px'
             }}>
                 {/* First Name */}
                 <Typography sx={{
@@ -197,7 +197,8 @@ const PrivacyEntryPage = ({index}: Props) => {
                 {/* Terms */}
                 <Typography sx={{
                     fontSize: '13px',
-                    color: theme.colors.accent
+                    color: theme.colors.accent,
+                    marginBottom: '-5px',
                 }}>
                     Important Information!
                 </Typography>
@@ -206,9 +207,9 @@ const PrivacyEntryPage = ({index}: Props) => {
                     color: theme.colors.placeholder
                 }}>
                     Please make sure that your details are correct!
-                    This is important if you win a Tonier or if we have questions about you.
+                    This is important if you win a Tournament or if we have questions about you.
                     As a coach, it is particularly important because otherwise you will not receive any money!
-                    If you provide incorrect information, you are not entitled to a final payment or prize money if you have taken part in a Tonier.
+                    If you provide incorrect information, you are not entitled to a final payment or prize money if you have taken part in a Tournament.
                 </Typography>
             </Box>
         </Box>

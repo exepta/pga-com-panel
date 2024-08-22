@@ -69,7 +69,8 @@ const AuthenticationPage = () => {
                     <Typography variant="h1"
                                 sx={{
                                     color: theme.colors.primary,
-                                    fontSize: '28px'
+                                    fontSize: '28px',
+                                    fontWeight: '700'
                                 }}>
                         Sign Up
                     </Typography>
@@ -84,7 +85,8 @@ const AuthenticationPage = () => {
                                     sx={{
                                         color: theme.colors.primary,
                                         fontSize: '16px',
-                                        textAlign: 'center'
+                                        textAlign: 'block',
+                                        padding: '0 20px'
                                     }}>
                             You're new? Come join us and support our community! Are you good at coaching?
                             Then indicate it when you register and we'll see what happens!
@@ -112,7 +114,8 @@ const AuthenticationPage = () => {
                                     color: theme.colors.primary,
                                     ':hover': {
                                         border: '2px solid ' + theme.colors.accentHovered,
-                                        backgroundColor: theme.colors.accentHovered
+                                        backgroundColor: theme.colors.accentHovered,
+                                        boxShadow: '0 0 10px ' + theme.colors.accentHovered,
                                     }
                                 }} onClick={() => setTriggerRegister(true)}>
                             Register
@@ -124,14 +127,22 @@ const AuthenticationPage = () => {
 
 
                 <Box sx={{
+                    position: 'relative',
                     width: '50%',
                     height: '100%',
                     backgroundImage: 'url(' + backgroundImage + ')',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    opacity: '0.4',
+                    opacity: '0.5',
                 }}>
+                    <Box sx={{
+                        position: 'absolute',
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: theme.backgrounds.overlayAuth,
+                    }}>
 
+                    </Box>
                 </Box>
 
                 {/* Right Side (LOGIN) */}
@@ -149,12 +160,13 @@ const AuthenticationPage = () => {
                     <Typography variant="h1"
                                 sx={{
                                     color: theme.colors.primary,
-                                    fontSize: '28px'
+                                    fontSize: '28px',
+                                    fontWeight: '700'
                                 }}>
                         Sign In
                     </Typography>
 
-                    <TextField id="email-input-login" label="Email Address" fullWidth variant="standard"
+                    <TextField id="email-input-login" label="E-Mail" fullWidth variant="standard"
                                sx={{
                                    '& .MuiInput-root': {
                                        color: theme.colors.primary,
@@ -241,6 +253,7 @@ const AuthenticationPage = () => {
                         width: '100%',
                         height: '30px',
                         display: 'flex',
+                        marginTop: '80px',
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>

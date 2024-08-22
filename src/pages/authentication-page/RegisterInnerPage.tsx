@@ -67,7 +67,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 width: '100%',
                 height: '35px',
                 borderRadius: '20px',
-                backgroundColor: theme.backgrounds.overBox,
+                backgroundColor: theme.backgrounds.secondary,
                 display: 'flex'
             }}>
                 {/* Back Section */}
@@ -155,7 +155,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             <Box sx={{
                 position: 'relative',
                 width: '100%',
-                height: 'calc(100% - 70px)',
+                height: 'calc(100% - 95px)',
                 padding: '10px 20px'
             }}>
                 {/* Content Box Privacy Information */}
@@ -167,10 +167,10 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             {/* Footer */}
             <Box sx={{
                 width: '100%',
-                height: '35px',
+                height: '55px',
                 display: 'flex',
                 justifyContent: 'space-between',
-                alignItems: 'center',
+                alignItems: 'start',
                 padding: '0 15px'
             }}>
                 <Button variant="contained" endIcon={<Clear />}
