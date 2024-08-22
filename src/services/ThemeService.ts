@@ -21,6 +21,12 @@ declare module '@mui/material/styles' {
             accentTransparency: string;
             placeholder: string;
             decent: string;
+            danger: string;
+            dangerHovered: string;
+            success: string;
+            successHovered: string;
+            warning: string;
+            warningHovered: string;
         }
         social: {
             google: string;
@@ -52,6 +58,12 @@ declare module '@mui/material/styles' {
             accentTransparency?: string;
             placeholder?: string;
             decent?: string;
+            danger?: string;
+            dangerHovered?: string;
+            success?: string;
+            successHovered?: string;
+            warning?: string;
+            warningHovered?: string;
         }
         social?: {
             google?: string;
@@ -71,7 +83,7 @@ export const theme = createTheme({
         secondary: '#26282d',
         secondaryTransparency: 'rgba(38,40,45,0.5)',
         secondaryHovered: '#2b2d33',
-        reg_glassy: 'rgba(38,40,45,0.5)',
+        reg_glassy: 'rgba(38,40,45,0.65)',
         overBox: '#1c1e21',
         hovered: '#464953',
         primaryHovered: 'rgba(70,73,83,0.5)',
@@ -90,6 +102,12 @@ export const theme = createTheme({
         accentTransparency: 'rgba(95,87,169,0.2)',
         placeholder: '#808080',
         decent: '#6c6c6c',
+        danger: '#d73e56',
+        dangerHovered: '#c23333',
+        success: '#4ccb97',
+        successHovered: '#43ab7f',
+        warning: '#e1b43e',
+        warningHovered: '#c29d39',
     },
     divider: {
         color: '#878994',

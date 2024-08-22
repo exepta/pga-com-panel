@@ -1,7 +1,8 @@
-import {Box, Typography, useTheme} from "@mui/material";
-import {NavigateBefore, NavigateNext} from "@mui/icons-material";
+import {Box, Button, Typography, useTheme} from "@mui/material";
+import {Clear, Input, NavigateBefore, NavigateNext, Send} from "@mui/icons-material";
 import PrivacyEntryPage from "./register-entries/PrivacyEntryPage.tsx";
 import {useState} from "react";
+import IgnorableInformation from "./register-entries/IgnorableInformation.tsx";
 
 type Props = {
     triggered: boolean,
@@ -47,7 +48,8 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             minWidth: '350px',
             height: '75%',
             minHeight: '275px',
-            backgroundColor: theme.backgrounds.secondary,
+            backgroundColor: theme.backgrounds.reg_glassy,
+            backdropFilter: 'blur(10px)',
             borderRadius: '10px',
             boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
             display: 'flex',
@@ -153,11 +155,53 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             <Box sx={{
                 position: 'relative',
                 width: '100%',
-                height: '100%',
+                height: 'calc(100% - 70px)',
                 padding: '10px 20px'
             }}>
                 {/* Content Box Privacy Information */}
                 <PrivacyEntryPage index={nextIndex} />
+                {/* Content Box Ignorable Information */}
+                <IgnorableInformation index={nextIndex} />
+            </Box>
+
+            {/* Footer */}
+            <Box sx={{
+                width: '100%',
+                height: '35px',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 15px'
+            }}>
+                <Button variant="contained" endIcon={<Clear />}
+                        sx={{
+                            width: '125px',
+                            height: '30px',
+                            paddingLeft: '20px',
+                            paddingRight: '20px',
+                            fontSize: '12px',
+                            backgroundColor: theme.colors.danger,
+                            ':hover': {
+                                backgroundColor: theme.colors.dangerHovered,
+                            }
+                        }} onClick={() => setTriggered(false)}>
+                    Abort
+                </Button>
+
+                <Button variant="contained" endIcon={<Input />}
+                        sx={{
+                            width: '125px',
+                            height: '30px',
+                            paddingLeft: '20px',
+                            paddingRight: '20px',
+                            fontSize: '12px',
+                            backgroundColor: theme.colors.accent,
+                            ':hover': {
+                                backgroundColor: theme.colors.accentHovered,
+                            }
+                        }}>
+                    Send
+                </Button>
             </Box>
         </Box>
     )

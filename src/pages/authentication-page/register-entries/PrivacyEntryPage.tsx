@@ -194,6 +194,22 @@ const PrivacyEntryPage = ({index}: Props) => {
                                    borderBottomColor: theme.colors.accent,
                                },
                            }} />
+                {/* Terms */}
+                <Typography sx={{
+                    fontSize: '13px',
+                    color: theme.colors.accent
+                }}>
+                    Important Information!
+                </Typography>
+                <Typography sx={{
+                    fontSize: '11px',
+                    color: theme.colors.placeholder
+                }}>
+                    Please make sure that your details are correct!
+                    This is important if you win a Tonier or if we have questions about you.
+                    As a coach, it is particularly important because otherwise you will not receive any money!
+                    If you provide incorrect information, you are not entitled to a final payment or prize money if you have taken part in a Tonier.
+                </Typography>
             </Box>
         </Box>
     )
