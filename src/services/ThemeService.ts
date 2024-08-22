@@ -9,6 +9,7 @@ declare module '@mui/material/styles' {
             secondaryTransparency: string;
             secondaryHovered: string;
             reg_glassy: string;
+            reg_glassy_box: string;
             overBox: string;
             hovered: string;
             primaryHovered: string;
@@ -47,6 +48,7 @@ declare module '@mui/material/styles' {
             secondaryTransparency?: string;
             secondaryHovered?: string;
             reg_glassy?: string;
+            reg_glassy_box?: string;
             overBox?: string;
             hovered?: string;
             primaryHovered?: string;
@@ -86,6 +88,7 @@ export const theme = createTheme({
         secondaryTransparency: 'rgba(38,40,45,0.5)',
         secondaryHovered: '#2b2d33',
         reg_glassy: 'rgba(38,40,45,0.65)',
+        reg_glassy_box: 'rgba(154,160,161,0.1)',
         overBox: '#1c1e21',
         hovered: '#464953',
         primaryHovered: 'rgba(70,73,83,0.5)',

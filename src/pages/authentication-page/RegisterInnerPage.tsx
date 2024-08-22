@@ -1,5 +1,5 @@
 import {Box, Button, Typography, useTheme} from "@mui/material";
-import {Clear, Input, NavigateBefore, NavigateNext, Send} from "@mui/icons-material";
+import {Clear, Input, NavigateBefore, NavigateNext} from "@mui/icons-material";
 import PrivacyEntryPage from "./register-entries/PrivacyEntryPage.tsx";
 import {useState} from "react";
 import IgnorableInformation from "./register-entries/IgnorableInformation.tsx";
@@ -65,7 +65,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             {/* Header */}
             <Box sx={{
                 width: '100%',
-                height: '35px',
+                height: '50px',
                 borderRadius: '20px',
                 backgroundColor: theme.backgrounds.secondary,
                 display: 'flex'
@@ -81,24 +81,32 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 }}>
                     {/* Button for back */}
                     <Box sx={{
-                        width: '25px',
-                        height: '25px',
-                        borderRadius: '50%',
+                        width: '75px',
+                        height: '35px',
                         display: 'flex',
                         justifyContent: 'center',
+                        borderRadius: '20px',
+                        padding: '0 5px',
+                        paddingRight:' 15px',
                         alignItems: 'center',
                         transition: '.3s all',
                         cursor: 'pointer',
                         ':hover': {
-                            backgroundColor: theme.backgrounds.secondaryHovered
+                            backgroundColor: theme.colors.accent,
                         }
                     }} onClick={() => {
                         if(nextIndex !== 1) { setNextIndex(nextIndex-1); } else { setTriggered(false); }
                     }}>
                         <NavigateBefore sx={{
                             color: theme.colors.primary,
-                            fontSize: '20px'
+                            fontSize: '1.75rem'
                         }}/>
+                        <Typography sx={{
+                            fontSize: '1rem',
+                            color: theme.colors.primary
+                        }}>
+                            Back
+                        </Typography>
                     </Box>
                 </Box>
 
@@ -112,8 +120,8 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                     alignItems: 'center'
                 }}>
                     <Typography variant="h4" sx={{
-                        color: theme.colors.accent,
-                        fontSize: '14px',
+                        color: theme.colors.primary,
+                        fontSize: '1.15rem',
                         fontWeight: 'bold'
                     }}>
                         {switchTitle()}
@@ -131,21 +139,29 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 }}>
                     {/* Button for next */}
                     <Box sx={{
-                        width: '25px',
-                        height: '25px',
-                        borderRadius: '50%',
+                        width: '75px',
+                        height: '35px',
                         display: 'flex',
                         justifyContent: 'center',
+                        borderRadius: '20px',
+                        padding: '0 5px',
+                        paddingLeft:' 10px',
                         alignItems: 'center',
                         transition: '.3s all',
                         cursor: 'pointer',
                         ':hover': {
-                            backgroundColor: theme.backgrounds.secondaryHovered
+                            backgroundColor: theme.colors.accent,
                         }
                     }} onClick={() => { setNextIndex(nextIndex+1); }}>
+                        <Typography sx={{
+                            fontSize: '1rem',
+                            color: theme.colors.primary
+                        }}>
+                            Next
+                        </Typography>
                         <NavigateNext sx={{
                             color: theme.colors.primary,
-                            fontSize: '20px'
+                            fontSize: '1.75rem'
                         }}/>
                     </Box>
                 </Box>

@@ -1,4 +1,5 @@
-import {Box, TextField, Typography, useTheme} from "@mui/material";
+import {Box, Typography, useTheme} from "@mui/material";
+import RegTextField from "../models/RegTextField.tsx";
 
 type Props = {
     index: number,
@@ -22,195 +23,58 @@ const PrivacyEntryPage = ({index}: Props) => {
             alignItems: 'center'
         }}>
             <Box sx={{
+                position: 'relative',
                 width: '60%',
                 height: '100%',
                 minWidth: '175px',
                 display: 'flex',
+                paddingTop: '40px',
                 flexDirection: 'column',
-                gap: '10px'
+                alignItems: 'center',
+                gap: '15px',
             }}>
-                {/* First Name */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent
+                <Box sx={{
+                    width: '100%',
+                    padding: '20px',
+                    backgroundColor: theme.backgrounds.reg_glassy_box,
+                    borderRadius: '8px',
                 }}>
-                    First Name
-                </Typography>
-                <TextField id="first-name-input-reg" label="First Name" fullWidth variant="standard"
-                           sx={{
-                               '& .MuiInput-root': {
-                                   color: theme.colors.primary,
-                                   fontSize: '14px'
-                               },
-                               '& .MuiInputLabel-root': {
-                                   color: theme.colors.placeholder,
-                                   fontSize: '12px'
-                               },
-                               '& .MuiInputLabel-root.Mui-focused': {
-                                   color: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:before': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover:before': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:after': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                           }} />
-                {/* Last Name */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent
-                }}>
-                    Last Name
-                </Typography>
-                <TextField id="last-name-input-reg" label="Last Name" fullWidth variant="standard"
-                           sx={{
-                               '& .MuiInput-root': {
-                                   color: theme.colors.primary,
-                                   fontSize: '14px'
-                               },
-                               '& .MuiInputLabel-root': {
-                                   color: theme.colors.placeholder,
-                                   fontSize: '12px'
-                               },
-                               '& .MuiInputLabel-root.Mui-focused': {
-                                   color: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:before': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover:before': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:after': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                           }} />
-                {/* Username */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent
-                }}>
-                    Username
-                </Typography>
-                <TextField id="username-input-reg" label="Username" fullWidth variant="standard"
-                           sx={{
-                               '& .MuiInput-root': {
-                                   color: theme.colors.primary,
-                                   fontSize: '14px'
-                               },
-                               '& .MuiInputLabel-root': {
-                                   color: theme.colors.placeholder,
-                                   fontSize: '12px'
-                               },
-                               '& .MuiInputLabel-root.Mui-focused': {
-                                   color: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:before': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover:before': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:after': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                           }} />
-                {/* Email */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent
-                }}>
-                    Email Address
-                </Typography>
-                <TextField id="email-input-reg" label="Email" fullWidth variant="standard"
-                           sx={{
-                               '& .MuiInput-root': {
-                                   color: theme.colors.primary,
-                                   fontSize: '14px'
-                               },
-                               '& .MuiInputLabel-root': {
-                                   color: theme.colors.placeholder,
-                                   fontSize: '12px'
-                               },
-                               '& .MuiInputLabel-root.Mui-focused': {
-                                   color: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:before': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover:before': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:after': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                           }} />
-                {/* Password */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent
-                }}>
-                    Your Secure Password
-                </Typography>
-                <TextField id="password-input-reg" label="Password" fullWidth variant="standard" type="password"
-                           sx={{
-                               '& .MuiInput-root': {
-                                   color: theme.colors.primary,
-                                   fontSize: '14px'
-                               },
-                               '& .MuiInputLabel-root': {
-                                   color: theme.colors.placeholder,
-                                   fontSize: '12px'
-                               },
-                               '& .MuiInputLabel-root.Mui-focused': {
-                                   color: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:before': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover': {
-                                   borderBottomColor: theme.colors.placeholder,
-                               },
-                               '& .MuiInput-underline:hover:before': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                               '& .MuiInput-underline:after': {
-                                   borderBottomColor: theme.colors.accent,
-                               },
-                           }} />
+                    {/* First Name */}
+                    <RegTextField id="first-name-input-id" name="First Name" />
+                    {/* Last Name */}
+                    <RegTextField id="last-name-input-id" name="Last Name" />
+                    {/* Username */}
+                    <RegTextField id="user-name-input-id" name="Username" />
+                    {/* Email */}
+                    <RegTextField id="email-input-id" name="E-Mail" />
+                    {/* Password */}
+                    <RegTextField id="password-input-id" name="Password" type="password" />
+                </Box>
                 {/* Terms */}
-                <Typography sx={{
-                    fontSize: '13px',
-                    color: theme.colors.accent,
-                    marginBottom: '-5px',
+                <Box sx={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '0',
+                    width: '100%',
+                    height: 'auto',
+                    padding: '10px 30px',
                 }}>
-                    Important Information!
-                </Typography>
-                <Typography sx={{
-                    fontSize: '11px',
-                    color: theme.colors.placeholder
-                }}>
-                    Please make sure that your details are correct!
-                    This is important if you win a Tournament or if we have questions about you.
-                    As a coach, it is particularly important because otherwise you will not receive any money!
-                    If you provide incorrect information, you are not entitled to a final payment or prize money if you have taken part in a Tournament.
-                </Typography>
+                    <Typography sx={{
+                        fontSize: '1.1rem',
+                        color: theme.colors.accent,
+                    }}>
+                        Important Information!
+                    </Typography>
+                    <Typography sx={{
+                        fontSize: '0.9rem',
+                        color: theme.colors.placeholder
+                    }}>
+                        Please make sure that your details are correct!
+                        This is important if you win a Tournament or if we have questions about you.
+                        As a coach, it is particularly important because otherwise you will not receive any money!
+                        If you provide incorrect information, you are not entitled to a final payment or prize money if you have taken part in a Tournament.
+                    </Typography>
+                </Box>
             </Box>
         </Box>
     )
