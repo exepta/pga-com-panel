@@ -36,7 +36,8 @@ const PrivacyEntryPage = ({index}: Props) => {
                 <Box sx={{
                     width: '100%',
                     padding: '20px',
-                    backgroundColor: theme.backgrounds.reg_glassy_box,
+                    backgroundColor: theme.backgrounds.secondaryHovered,
+                    boxShadow: '0 0 10px ' + theme.backgrounds.secondaryHovered,
                     borderRadius: '8px',
                 }}>
                     {/* First Name */}

@@ -48,7 +48,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             minWidth: '350px',
             height: '75%',
             minHeight: '275px',
-            backgroundColor: theme.backgrounds.reg_glassy,
+            backgroundColor: theme.backgrounds.secondary,
             backdropFilter: 'blur(10px)',
             borderRadius: '10px',
             boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
@@ -56,7 +56,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             flexDirection: 'column',
             gap: '10px',
             overflow: 'hidden',
-            padding: '10px',
+            padding: '10px 20px',
             transition: '.8s all',
             zIndex: triggered ? '10' : '0',
             opacity: triggered ? '1' : '0',
@@ -66,8 +66,10 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
             <Box sx={{
                 width: '100%',
                 height: '50px',
-                borderRadius: '20px',
-                backgroundColor: theme.backgrounds.secondary,
+                //borderBottom: '1px solid ' + theme.colors.placeholder,
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)',
+                borderRadius: '10px',
+                backgroundColor: 'transparent',
                 display: 'flex'
             }}>
                 {/* Back Section */}
