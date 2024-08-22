@@ -69,7 +69,7 @@ const AuthenticationPage = () => {
                     <Typography variant="h1"
                                 sx={{
                                     color: theme.colors.primary,
-                                    fontSize: '28px',
+                                    fontSize: '2rem',
                                     fontWeight: '700'
                                 }}>
                         Sign Up
@@ -84,7 +84,7 @@ const AuthenticationPage = () => {
                         <Typography variant="subtitle1"
                                     sx={{
                                         color: theme.colors.primary,
-                                        fontSize: '16px',
+                                        fontSize: '1rem',
                                         textAlign: 'block',
                                         padding: '0 20px'
                                     }}>
@@ -160,7 +160,7 @@ const AuthenticationPage = () => {
                     <Typography variant="h1"
                                 sx={{
                                     color: theme.colors.primary,
-                                    fontSize: '28px',
+                                    fontSize: '2rem',
                                     fontWeight: '700'
                                 }}>
                         Sign In
@@ -170,11 +170,11 @@ const AuthenticationPage = () => {
                                sx={{
                                    '& .MuiInput-root': {
                                        color: theme.colors.primary,
-                                       fontSize: '14px'
+                                       fontSize: '1rem'
                                    },
                                    '& .MuiInputLabel-root': {
                                        color: theme.colors.placeholder,
-                                       fontSize: '12px'
+                                       fontSize: '0.95rem'
                                    },
                                    '& .MuiInputLabel-root.Mui-focused': {
                                        color: theme.colors.accent,
@@ -186,7 +186,7 @@ const AuthenticationPage = () => {
                                        borderBottomColor: theme.colors.placeholder,
                                    },
                                    '& .MuiInput-underline:hover:before': {
-                                       borderBottomColor: theme.colors.accent,
+                                       borderBottomColor: theme.colors.placeholder,
                                    },
                                    '& .MuiInput-underline:after': {
                                        borderBottomColor: theme.colors.accent,
@@ -201,11 +201,11 @@ const AuthenticationPage = () => {
                                sx={{
                                    '& .MuiInput-root': {
                                        color: theme.colors.primary,
-                                       fontSize: '14px'
+                                       fontSize: '1rem'
                                    },
                                    '& .MuiInputLabel-root': {
                                        color: theme.colors.placeholder,
-                                       fontSize: '12px'
+                                       fontSize: '0.95rem'
                                    },
                                    '& .MuiInputLabel-root.Mui-focused': {
                                        color: theme.colors.accent,
@@ -217,7 +217,7 @@ const AuthenticationPage = () => {
                                        borderBottomColor: theme.colors.placeholder,
                                    },
                                    '& .MuiInput-underline:hover:before': {
-                                       borderBottomColor: theme.colors.accent,
+                                       borderBottomColor: theme.colors.placeholder,
                                    },
                                    '& .MuiInput-underline:after': {
                                        borderBottomColor: theme.colors.accent,
@@ -260,7 +260,7 @@ const AuthenticationPage = () => {
                         <Typography variant="subtitle1"
                                     sx={{
                                         color: theme.colors.placeholder,
-                                        fontSize: '11px'
+                                        fontSize: '0.8rem'
                                     }}>
                             or connect with Social Media
                         </Typography>
