@@ -4,9 +4,10 @@ type Props = {
     id: string,
     name: string,
     type?: string,
+    onChange?: (value: string) => void,
 }
 
-const RegTextField = ({id, name, type}: Props) => {
+const RegTextField = ({id, name, type, onChange}: Props) => {
     const theme = useTheme();
     return (
         <Box sx={{
@@ -41,7 +42,9 @@ const RegTextField = ({id, name, type}: Props) => {
                            '& .MuiInputLabel-root.Mui-focused': {
                                color: theme.colors.accent,
                            },
-                       }} />
+                       }}
+                       onChange={event => onChange && onChange(event.target.value)}
+            />
         </Box>
     );
 }

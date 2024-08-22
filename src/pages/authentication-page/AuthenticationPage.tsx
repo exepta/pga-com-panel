@@ -1,9 +1,10 @@
-import {Box, Button, TextField, Typography, useTheme} from "@mui/material";
+import {Box, Button, Typography, useTheme} from "@mui/material";
 import backgroundImage from "../../assets/images/auth-background.jpeg";
 import {GitHub, Google, Send} from "@mui/icons-material";
 import {useState} from "react";
 import useAuth from "../../hooks/useAuth.ts";
 import RegisterInnerPage from "./RegisterInnerPage.tsx";
+import RegTextField from "./models/RegTextField.tsx";
 
 const AuthenticationPage = () => {
     const theme = useTheme();
@@ -165,68 +166,11 @@ const AuthenticationPage = () => {
                                 }}>
                         Sign In
                     </Typography>
+                    <RegTextField id="email-login-input" name="E-Mail"
+                                  onChange={value => setUserData(value)} />
 
-                    <TextField id="email-input-login" label="E-Mail" fullWidth variant="standard"
-                               sx={{
-                                   '& .MuiInput-root': {
-                                       color: theme.colors.primary,
-                                       fontSize: '1rem'
-                                   },
-                                   '& .MuiInputLabel-root': {
-                                       color: theme.colors.placeholder,
-                                       fontSize: '0.95rem'
-                                   },
-                                   '& .MuiInputLabel-root.Mui-focused': {
-                                       color: theme.colors.accent,
-                                   },
-                                   '& .MuiInput-underline:before': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:hover': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:hover:before': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:after': {
-                                       borderBottomColor: theme.colors.accent,
-                                   },
-                               }}
-                               onChange={event => {setUserData(event.target.value)}}
-                    >
-
-                    </TextField>
-
-                    <TextField type="password" id="password-input-login" label="Password" fullWidth variant="standard"
-                               sx={{
-                                   '& .MuiInput-root': {
-                                       color: theme.colors.primary,
-                                       fontSize: '1rem'
-                                   },
-                                   '& .MuiInputLabel-root': {
-                                       color: theme.colors.placeholder,
-                                       fontSize: '0.95rem'
-                                   },
-                                   '& .MuiInputLabel-root.Mui-focused': {
-                                       color: theme.colors.accent,
-                                   },
-                                   '& .MuiInput-underline:before': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:hover': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:hover:before': {
-                                       borderBottomColor: theme.colors.placeholder,
-                                   },
-                                   '& .MuiInput-underline:after': {
-                                       borderBottomColor: theme.colors.accent,
-                                   },
-                               }}
-                               onChange={event => {setPassword(event.target.value)}}
-                    >
-
-                    </TextField>
+                    <RegTextField id="password-login-input" name="Password" type="password"
+                                  onChange={value => setPassword(value)} />
 
                     <Box sx={{
                         width: '100%',
