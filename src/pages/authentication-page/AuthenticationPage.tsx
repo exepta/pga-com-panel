@@ -155,7 +155,7 @@ const AuthenticationPage = () => {
                     justifyContent: 'center',
                     alignItems: 'start',
                     padding: '0 60px',
-                    gap: '20px'
+                    gap: '10px'
                 }}>
 
                     <Typography variant="h1"

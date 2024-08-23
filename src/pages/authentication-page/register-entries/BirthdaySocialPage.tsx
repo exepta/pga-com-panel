@@ -4,7 +4,7 @@ type Props = {
     index: number,
 }
 
-const IgnorableInformation = ({index}: Props) => {
+const BirthdaySocialPage = ({index}: Props) => {
     const theme = useTheme();
 
     const active = index === 2;
@@ -26,4 +26,4 @@ const IgnorableInformation = ({index}: Props) => {
     )
 }
 
-export default IgnorableInformation
+export default BirthdaySocialPage

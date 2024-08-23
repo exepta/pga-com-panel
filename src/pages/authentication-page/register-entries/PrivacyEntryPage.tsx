@@ -44,12 +44,8 @@ const PrivacyEntryPage = ({index}: Props) => {
                     <RegTextField id="first-name-input-id" name="First Name" />
                     {/* Last Name */}
                     <RegTextField id="last-name-input-id" name="Last Name" />
-                    {/* Username */}
-                    <RegTextField id="user-name-input-id" name="Username" />
                     {/* Email */}
                     <RegTextField id="email-input-id" name="E-Mail" />
-                    {/* Password */}
-                    <RegTextField id="password-input-id" name="Password" type="password" />
                 </Box>
                 {/* Terms */}
                 <Box sx={{

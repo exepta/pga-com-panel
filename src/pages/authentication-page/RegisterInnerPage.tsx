@@ -2,7 +2,7 @@ import {Box, Button, Typography, useTheme} from "@mui/material";
 import {Clear, Input, NavigateBefore, NavigateNext} from "@mui/icons-material";
 import PrivacyEntryPage from "./register-entries/PrivacyEntryPage.tsx";
 import {useState} from "react";
-import IgnorableInformation from "./register-entries/IgnorableInformation.tsx";
+import BirthdaySocialPage from "./register-entries/BirthdaySocialPage.tsx";
 
 type Props = {
     triggered: boolean,
@@ -22,7 +22,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 break;
             }
             case 2: {
-                title = "Ignorable Information";
+                title = "Birthday & Social";
                 break;
             }
             case 3: {
@@ -104,7 +104,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                             fontSize: '1.75rem'
                         }}/>
                         <Typography sx={{
-                            fontSize: '1rem',
+                            fontSize: '0.9rem',
                             color: theme.colors.primary
                         }}>
                             Back
@@ -123,7 +123,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 }}>
                     <Typography variant="h4" sx={{
                         color: theme.colors.primary,
-                        fontSize: '1.15rem',
+                        fontSize: '1.1rem',
                         fontWeight: 'bold'
                     }}>
                         {switchTitle()}
@@ -156,7 +156,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                         }
                     }} onClick={() => { setNextIndex(nextIndex+1); }}>
                         <Typography sx={{
-                            fontSize: '1rem',
+                            fontSize: '0.9rem',
                             color: theme.colors.primary
                         }}>
                             Next
@@ -179,7 +179,7 @@ const RegisterInnerPage = ({triggered, setTriggered}: Props) => {
                 {/* Content Box Privacy Information */}
                 <PrivacyEntryPage index={nextIndex} />
                 {/* Content Box Ignorable Information */}
-                <IgnorableInformation index={nextIndex} />
+                <BirthdaySocialPage index={nextIndex} />
             </Box>
 
             {/* Footer */}
