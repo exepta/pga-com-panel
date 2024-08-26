@@ -7,6 +7,8 @@ import React, {lazy} from "react";
 import {theme} from "./services/ThemeService.ts";
 import LeagueMainPage from "./pages/league-page/LeagueMainPage.tsx";
 import {AuthProvider} from "./context/AuthContext.tsx";
+import {LocalizationProvider} from "@mui/x-date-pickers";
+import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 
 const ProtectedRoute = lazy(() => import("./pages/ProtectedRoute.tsx"));
 const DashboardPage = lazy(() => import("./pages/dashboard-page/DashboardPage.tsx"));
@@ -16,25 +18,27 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>
-      <div className={`app-router`}>
-        <Routes>
-          {/* PUBLIC */}
-          <Route path="auth" element={<AuthenticationPage />} />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <div className={`app-router`}>
+                  <Routes>
+                      {/* PUBLIC */}
+                      <Route path="auth" element={<AuthenticationPage />} />
 
-          {/* PROTECTED */}
-          <Route path="/" element={<ProtectedRoute>
-              <React.Suspense fallback={<LoadingPage />}>
-                  <OutletPage />
-              </React.Suspense>
-          </ProtectedRoute>
-          }>
-              <Route index element={<DashboardPage />} />
-              <Route path="/league-of-legends" element={<LeagueMainPage />} />
-          </Route>
+                      {/* PROTECTED */}
+                      <Route path="/" element={<ProtectedRoute>
+                          <React.Suspense fallback={<LoadingPage />}>
+                              <OutletPage />
+                          </React.Suspense>
+                      </ProtectedRoute>
+                      }>
+                          <Route index element={<DashboardPage />} />
+                          <Route path="/league-of-legends" element={<LeagueMainPage />} />
+                      </Route>
 
-          {/* CATCH OTHERS */}
-        </Routes>
-      </div>
+                      {/* CATCH OTHERS */}
+                  </Routes>
+              </div>
+          </LocalizationProvider>
       </AuthProvider>
     </ThemeProvider>
   )
